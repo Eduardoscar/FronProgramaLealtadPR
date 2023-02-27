@@ -1,0 +1,15 @@
+<header>
+	<nav>
+		<ul>
+			<li *ngIf="rutaActual !== '/' && rutaActual !== '/home'" ><a [routerLink]="['/home']">Inicio</a></li>
+			<li><a href="#">¿Cómo funciona?</a></li>
+			<li><a href="#">Beneficios</a></li>
+			<li *ngIf="rutaActual !== '/business'"><a [routerLink]="['/business']">Negocios</a></li>
+			<li *ngIf="rutaActual == '/home-business'"><a href="#">Crear Producto</a></li>
+            <li *ngIf="isExistToken &&  rutaActual !== rutaPerfil"><a [routerLink]="rutaPerfil">Perfil</a></li>
+			<li *ngIf="!isExistToken && rutaActual !== '/login'"><a [routerLink]="['/login']">Iniciar Sesión</a></li>
+            <li *ngIf="isExistToken"><a href="#" (click)="logout()">Cerrar Sesión</a></li>
+		</ul>
+	</nav>
+</header>
+<router-outlet ></router-outlet>

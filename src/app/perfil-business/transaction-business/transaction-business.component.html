@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="points">
+    <div class="indicador-puntos1">
+		<h2>Puntos generados </h2>
+        <h2>{{PointsGenerados}}</h2>
+	</div>
+    <div class="indicador-puntos2">
+		<h2>Puntos canjeados </h2>
+        <h2>{{PointsCanjeados}}</h2>
+	</div>
+    </div>
+    <h1>Movimientos del negocio</h1>
+    <h2 *ngIf="transactionsFiltradas.length == 0">No cuentas con movimientos</h2>
+    <div *ngIf="transactions.length != 0">
+      <label for="filter-select">Filtrar por:</label>
+      <select [(ngModel)]="filtro" (change)="applyFilter()">
+        <option *ngFor="let option of options" [value]="option">{{option}}</option>
+      </select>
+    </div>
+    <table *ngIf="transactionsFiltradas.length != 0" id="tabla-transactions">
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Usuario</th>
+          <th>Puntos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let transaction of transactionsFiltradas">
+          <td>{{transaction.creationDate | date}}</td>
+          <td>{{transaction.email_user}}</td>
+          <td>{{transaction.points}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>

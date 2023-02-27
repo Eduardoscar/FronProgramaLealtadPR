@@ -1,0 +1,22 @@
+body {
+	margin: 0 0 0 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 80vh;
+	margin: 0;
+}
+h1 {
+    text-align: center;
+}
+.indicador-puntos {
+    background-color: #ffc107;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+    display: inline-block;
+}

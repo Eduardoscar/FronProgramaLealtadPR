@@ -1,0 +1,20 @@
+<h2>Registar Compra</h2>
+<div class="container">
+    <input
+        type="Email del cliente"
+        [(ngModel)]="email_user"
+        name="Email del cliente"
+        placeholder="Email del cliente"
+        required="required"
+      />
+      <input
+        type="Puntos a registar"
+        [(ngModel)]="points"
+        name="Puntos"
+        placeholder="Puntos"
+        required="required"
+      />
+      <button type="submit" (click)="register()">Registrar</button>
+      <h3 *ngIf="CreacionFallo">{{mensaje}}</h3>
+      <h3 *ngIf="CreacionExitosa">{{mensaje}}</h3>
+</div>

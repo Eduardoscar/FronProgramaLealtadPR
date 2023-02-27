@@ -1,0 +1,33 @@
+<br>
+<br>
+<br>
+<br>
+<ul>
+    <li *ngFor="let one_business of business" class="business-item">
+      <h2>{{ one_business.name }}</h2>
+      <div *ngIf="one_business.picture">
+        <img [src]="one_business.picture">
+      </div>
+      <p>{{ one_business.address }}</p>
+      <p>{{ one_business.telephone }}</p>
+      <h3>Redes Sociales</h3>
+      <div class="social-networks">
+      <div *ngIf="one_business.facebook"  class="social-icons">
+        <a [href]="one_business.facebook" target="_blank">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </div>
+      <div *ngIf="one_business.instagram"  class="social-icons">
+        <a [href]="one_business.instagram" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+      <div *ngIf="one_business.whatsapp"  class="social-icons">
+        <a [href]="one_business.whatsapp" target="_blank">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+    <hr>
+    </li>
+  </ul>

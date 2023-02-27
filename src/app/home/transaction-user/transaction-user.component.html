@@ -1,0 +1,27 @@
+<div class="container">
+    <h1>Mis movimientos</h1>
+    <h2 *ngIf="transactionsFiltradas.length == 0">No cuentas con movimientos aun</h2>
+    <div *ngIf="transactionsFiltradas.length != 0">
+      <label for="filter-select">Filtrar por:</label>
+      <select [(ngModel)]="filtro" (change)="applyFilter()">
+        <option *ngFor="let option of options" [value]="option">{{option}}</option>
+      </select>
+    </div>
+    <table *ngIf="transactionsFiltradas.length != 0" id="tabla-transactions">
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Negocio</th>
+          <th>Puntos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let transaction of transactionsFiltradas">
+          <td>{{transaction.creationDate | date}}</td>
+          <td>{{transaction.name_business}}</td>
+          <td>{{transaction.points}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
